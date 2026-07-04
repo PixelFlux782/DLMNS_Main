@@ -29,10 +29,10 @@ export function RootPage() {
 function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-ink/84 backdrop-blur-xl">
-      <nav className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 sm:px-8">
+      <nav className="mx-auto flex min-h-[7.75rem] max-w-7xl flex-col justify-center gap-3 px-5 py-3 sm:px-8 md:h-[4.5rem] md:min-h-0 md:flex-row md:items-center md:justify-between md:gap-8 md:py-0">
         <a
           href="#top"
-          className="flex h-12 w-[8.75rem] items-center sm:w-[10.25rem]"
+          className="flex h-9 w-[8.75rem] shrink-0 items-center sm:w-[10.25rem] md:h-12"
           aria-label="DLMNS Start"
         >
           <Image
@@ -45,9 +45,12 @@ function Header() {
             sizes="(min-width: 640px) 164px, 140px"
           />
         </a>
-        <div className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+        <div className="flex w-full flex-wrap items-center gap-x-3 gap-y-2 text-[0.68rem] text-slate-300 min-[420px]:text-[0.76rem] sm:gap-x-5 sm:text-sm md:w-auto md:flex-nowrap md:gap-7 [&_a]:shrink-0 [&_a]:whitespace-nowrap">
           <a className="transition hover:text-white" href="#angebote">
             Angebote
+          </a>
+          <a className="transition hover:text-white" href="#stapelstuehle-klapptische">
+            Stapelstühle & Klapptische
           </a>
           <a className="transition hover:text-white" href="#bereiche">
             Räume
@@ -68,7 +71,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative mx-auto grid min-h-[86svh] max-w-7xl overflow-hidden px-5 pb-12 pt-28 sm:px-8 lg:min-h-[82svh] lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:items-center lg:gap-12"
+      className="relative mx-auto grid min-h-[86svh] max-w-7xl scroll-mt-40 overflow-hidden px-5 pb-12 pt-44 sm:px-8 md:scroll-mt-28 md:pt-28 lg:min-h-[82svh] lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:items-center lg:gap-12"
     >
       <div className="relative z-10 w-full max-w-[calc(100vw-2.5rem)] sm:max-w-4xl">
         <p className="mb-7 max-w-[22rem] text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/75 sm:max-w-none sm:tracking-[0.28em]">
@@ -141,7 +144,7 @@ function HeroFishMark() {
 
 function OfferSection() {
   return (
-    <section id="angebote" className="relative border-t border-white/10 py-24 sm:py-28">
+    <section id="angebote" className="relative scroll-mt-40 border-t border-white/10 py-24 sm:py-28 md:scroll-mt-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div {...fadeIn} className="max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-emerald-100/65">
@@ -152,24 +155,52 @@ function OfferSection() {
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 lg:grid-cols-5">
+        <div className="mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 lg:grid-cols-6">
           {offers.map((offer, index) => (
             <motion.article
               key={offer.name}
+              id={offer.id}
               {...fadeIn}
               transition={{ ...fadeIn.transition, delay: index * 0.04 }}
-              className="group flex min-h-[20rem] flex-col bg-ink-soft/94 p-6 transition hover:bg-[#0e1714]"
+              className={`group flex scroll-mt-40 flex-col transition hover:bg-[#0e1714] md:scroll-mt-32 ${
+                offer.featured
+                  ? "min-h-[24rem] bg-[linear-gradient(145deg,rgba(208,226,191,0.13),rgba(11,20,17,0.97)_42%,rgba(5,7,11,0.96))] p-7 shadow-panel lg:col-span-2 lg:p-8"
+                  : "min-h-[20rem] bg-ink-soft/94 p-6"
+              }`}
             >
-              <p className="text-xs uppercase tracking-[0.2em] text-emerald-100/55">
-                0{index + 1}
+              <div className="flex items-start justify-between gap-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-emerald-100/55">
+                  0{index + 1}
+                </p>
+                {offer.status ? (
+                  <span className="max-w-[11rem] border border-emerald-100/18 bg-emerald-100/[0.06] px-3 py-1 text-right text-xs leading-5 text-emerald-50/82">
+                    {offer.status}
+                  </span>
+                ) : null}
+              </div>
+              <h3
+                className={`mt-5 font-semibold text-white ${
+                  offer.featured ? "max-w-sm text-3xl leading-tight" : "text-2xl"
+                }`}
+              >
+                {offer.name}
+              </h3>
+              <p
+                className={`mt-5 leading-7 text-slate-300 ${
+                  offer.featured ? "max-w-xl text-base" : "text-sm"
+                }`}
+              >
+                {offer.summary}
               </p>
-              <h3 className="mt-5 text-2xl font-semibold text-white">{offer.name}</h3>
-              <p className="mt-5 text-sm leading-7 text-slate-300">{offer.summary}</p>
               <div className="mt-7 flex flex-wrap gap-2">
                 {offer.items.map((item) => (
                   <span
                     key={item}
-                    className="border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
+                    className={`border px-3 py-1 text-xs ${
+                      offer.featured
+                        ? "border-emerald-100/16 bg-emerald-100/[0.055] text-emerald-50/78"
+                        : "border-white/10 bg-white/[0.03] text-slate-300"
+                    }`}
                   >
                     {item}
                   </span>
@@ -178,8 +209,8 @@ function OfferSection() {
               {offer.href ? (
                 <a
                   href={offer.href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={offer.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={offer.href.startsWith("mailto:") ? undefined : "noreferrer"}
                   className="mt-auto pt-7 text-sm font-medium text-emerald-100 transition group-hover:text-white"
                 >
                   {offer.cta} <span aria-hidden="true">-&gt;</span>
@@ -195,7 +226,7 @@ function OfferSection() {
 
 function WorldsSection() {
   return (
-    <section id="bereiche" className="relative border-t border-white/10 py-24 sm:py-28">
+    <section id="bereiche" className="relative scroll-mt-40 border-t border-white/10 py-24 sm:py-28 md:scroll-mt-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div {...fadeIn} className="max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-emerald-100/65">
@@ -233,8 +264,8 @@ function WorldsSection() {
               {world.href ? (
                 <a
                   href={world.href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={world.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={world.href.startsWith("mailto:") ? undefined : "noreferrer"}
                   className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-emerald-100 transition group-hover:text-white"
                 >
                   {world.cta}
@@ -284,7 +315,7 @@ function LogicSection() {
 
 function DigitalSection() {
   return (
-    <section id="digital" className="border-t border-white/10 py-24">
+    <section id="digital" className="scroll-mt-40 border-t border-white/10 py-24 md:scroll-mt-28">
       <motion.div {...fadeIn} className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="border border-emerald-100/18 bg-emerald-100/[0.045] p-7 shadow-panel sm:p-10 lg:p-12">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-emerald-100/65">
@@ -318,7 +349,7 @@ function DigitalSection() {
 
 function ContactSection() {
   return (
-    <section id="kontakt" className="border-t border-white/10 py-24">
+    <section id="kontakt" className="scroll-mt-40 border-t border-white/10 py-24 md:scroll-mt-28">
       <motion.div {...fadeIn} className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <p className="text-xs font-medium uppercase tracking-[0.3em] text-emerald-100/65">
           Einstieg
@@ -363,8 +394,8 @@ function Footer() {
             <a
               key={world.name}
               href={world.href}
-              target="_blank"
-              rel="noreferrer"
+              target={world.href?.startsWith("mailto:") ? undefined : "_blank"}
+              rel={world.href?.startsWith("mailto:") ? undefined : "noreferrer"}
               className="transition hover:text-white"
             >
               {world.name}

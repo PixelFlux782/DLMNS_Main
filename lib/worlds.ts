@@ -13,13 +13,34 @@ export type DlmnsOffer = {
   items: string[];
   href?: string;
   cta?: string;
+  id?: string;
+  status?: string;
+  featured?: boolean;
+};
+
+export const primaryLinks = {
+  digital: "https://dlmn-sdigital.vercel.app/",
+  contact: "mailto:hallo@dlmns.de?subject=Projektanfrage%20DLMNS",
+  furnitureInquiry:
+    "mailto:hallo@dlmns.de?subject=Ausstattung%20anfragen%20-%20Stapelstuehle%20und%20Klapptische"
 };
 
 export const offers: DlmnsOffer[] = [
   {
+    name: "Stapelstühle & Klapptische",
+    summary:
+      "Der praktische Ursprung von DLMNS: Stapelstühle, Klapptische und Ausstattung für Gemeinden, Veranstaltungen und flexible Gemeinderäume.",
+    items: ["Stapelstühle", "Klapptische", "Sitzmöbel", "Gemeinderäume", "Veranstaltungen"],
+    href: primaryLinks.furnitureInquiry,
+    cta: "Ausstattung anfragen",
+    id: "stapelstuehle-klapptische",
+    status: "Wurzel der DLMNS-Gruppe",
+    featured: true
+  },
+  {
     name: "Räume & Ausstattung",
-    summary: "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für Gemeinderäume.",
-    items: ["Sitzmöbel", "Stapelstühle", "Klapptische", "Raumnutzung"]
+    summary: "Durchdachte Ausstattung, Raumgefühl und praktische Planung für nutzbare Gemeinderäume.",
+    items: ["Raumnutzung", "Ausstattung", "Planung", "Gemeindebedarf"]
   },
   {
     name: "Gemeindeservice",
@@ -28,14 +49,14 @@ export const offers: DlmnsOffer[] = [
   },
   {
     name: "DLMNS Digital",
-    summary: "Webseiten, kleine Tools und Automatisierung als Ergänzung zum praktischen Gemeindeservice.",
+    summary: "Webseiten, kleine Tools und Automatisierung als Ergänzung zum gewachsenen praktischen Kern.",
     items: ["Webseiten", "Werkzeuge", "Abläufe", "Ergänzung"],
-    href: "https://dlmn-sdigital.vercel.app/",
+    href: primaryLinks.digital,
     cta: "Digital ansehen"
   },
   {
     name: "Digitale Räume",
-    summary: "Symbolräume, Lernräume, Glaubensräume und interaktive Formate.",
+    summary: "Symbolräume, Lernräume, Glaubensräume und interaktive Formate als ergänzende Entwicklung.",
     items: ["Symbolraum", "Lernräume", "Glaubensräume", "Interaktive Formate"],
     href: "https://bibel-symbolraum.vercel.app/",
     cta: "Raum erkunden"
@@ -49,6 +70,15 @@ export const offers: DlmnsOffer[] = [
 
 export const worlds: DlmnsWorld[] = [
   {
+    name: "Stapelstühle & Klapptische",
+    category: "Praktischer Kern",
+    description:
+      "Der gewachsene Ursprung der DLMNS-Gruppe: Sitzmöbel, Stapelstühle, Klapptische und Ausstattung für Gemeinden, Veranstaltungen und flexible Gemeinderäume.",
+    status: "Aktiv",
+    href: primaryLinks.furnitureInquiry,
+    cta: "Anfragen"
+  },
+  {
     name: "Gemeindeservice",
     category: "Service & Organisation",
     description:
@@ -61,7 +91,7 @@ export const worlds: DlmnsWorld[] = [
     name: "Räume & Ausstattung",
     category: "Gemeinde & Raum",
     description:
-      "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für nutzbare Gemeinderäume.",
+      "Raumgefühl, Planung und durchdachte Ausstattung für Gemeinderäume, die im Alltag verlässlich funktionieren.",
     status: "Im Aufbau"
   },
   {
@@ -70,7 +100,7 @@ export const worlds: DlmnsWorld[] = [
     description:
       "Webseiten, Werkzeuge und Automatisierung für Gemeinden, Projekte und kleine Organisationen, wenn Digitales wirklich entlastet.",
     status: "Aktiv",
-    href: "https://dlmn-sdigital.vercel.app/",
+    href: primaryLinks.digital,
     cta: "Öffnen"
   },
   {
@@ -90,8 +120,3 @@ export const worlds: DlmnsWorld[] = [
     status: "Entsteht"
   }
 ];
-
-export const primaryLinks = {
-  digital: "https://dlmn-sdigital.vercel.app/",
-  contact: "mailto:hallo@dlmns.de?subject=Projektanfrage%20DLMNS"
-};
