@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DLMNS | Gemeinde, Raum und digitale Entwicklung",
+  title: "DLMNS | Gemeinde, Raum und Ausstattung",
   description:
-    "DLMNS ist ein Familienbetrieb für Gemeindebedarf, Räume, Ausstattung, digitale Werkzeuge und neue Angebotsentwicklung.",
+    "DLMNS ist ein Familienbetrieb für Gemeindebedarf, Räume, Ausstattung, Service und ergänzende digitale Werkzeuge.",
   metadataBase: new URL("https://dlmns.vercel.app"),
   icons: {
     icon: "/dlmns-main-icon.png",

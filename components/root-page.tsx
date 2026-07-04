@@ -51,7 +51,7 @@ function Header() {
             Angebote
           </a>
           <a className="transition hover:text-white" href="#bereiche">
-            Bereiche
+            Räume
           </a>
           <a className="transition hover:text-white" href="#digital">
             Digital
@@ -82,14 +82,14 @@ function Hero() {
       />
       <div className="w-full max-w-[calc(100vw-2.5rem)] sm:max-w-4xl">
         <p className="mb-7 max-w-[22rem] text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/75 sm:max-w-none sm:tracking-[0.28em]">
-          Familienbetrieb für Gemeinde, Raum und digitale Entwicklung
+          Familienbetrieb für Gemeinde, Raum und Ausstattung
         </p>
         <h1 className="max-w-[20rem] text-[1.75rem] font-semibold leading-[1.16] text-white sm:max-w-4xl sm:text-6xl sm:leading-[1.08] lg:text-7xl">
-          DLMNS verbindet Gemeindebedarf, Räume und digitale Werkzeuge.
+          DLMNS verbindet Gemeindebedarf, Räume und passende Ausstattung.
         </h1>
         <p className="mt-8 max-w-[21rem] text-sm leading-7 text-slate-300 sm:max-w-2xl sm:text-lg sm:leading-8">
-          Von Ausstattung und Organisation über Webseiten und Automatisierung bis
-          zu digitalen Lern- und Glaubensräumen.
+          Persönlich geführt, praktisch gedacht: von Sitzmöbeln, Tischen und
+          Organisation bis zu digitalen Werkzeugen als sinnvolle Erweiterung.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <a
@@ -99,18 +99,16 @@ function Hero() {
             Angebote ansehen
           </a>
           <a
-            href={primaryLinks.digital}
-            target="_blank"
-            rel="noreferrer"
+            href={primaryLinks.contact}
             className="inline-flex h-12 items-center justify-center border border-white/12 bg-white/[0.03] px-6 text-sm font-medium text-slate-100 transition hover:border-white/24 hover:bg-white/[0.07]"
           >
-            DLMNS Digital öffnen
+            Anfrage starten
           </a>
         </div>
       </div>
 
       <div className="mt-16 grid w-full max-w-[calc(100vw-2.5rem)] grid-cols-2 gap-px border border-white/10 bg-white/10 sm:max-w-4xl sm:grid-cols-4">
-        {["Gemeinde", "Raum", "Ausstattung", "Digital"].map((item) => (
+        {["Gemeinde", "Räume & Ausstattung", "Service", "Digital als Ergänzung"].map((item) => (
           <div key={item} className="bg-ink/72 px-4 py-4 text-sm text-slate-300">
             {item}
           </div>
@@ -129,7 +127,7 @@ function OfferSection() {
             DLMNS Angebote
           </p>
           <h2 className="mt-5 text-3xl font-semibold text-white sm:text-5xl">
-            Fünf Bereiche für konkrete Räume und digitale Entwicklung.
+            Der Schwerpunkt: nutzbare Räume, passende Ausstattung und verlässlicher Service.
           </h2>
         </motion.div>
 
@@ -183,7 +181,7 @@ function WorldsSection() {
             Aktive Bereiche
           </p>
           <h2 className="mt-5 text-3xl font-semibold text-white sm:text-5xl">
-            Eine Dachmarke für praktische Services und eigene digitale Räume.
+            Eine Dachmarke für Gemeindeservice, Räume und ergänzende digitale Angebote.
           </h2>
         </motion.div>
 
@@ -235,8 +233,8 @@ function WorldsSection() {
 function LogicSection() {
   const points = [
     ["Gemeinde praktisch denken", "DLMNS verbindet Ausstattung, Abläufe und Beratung mit dem Alltag echter Gemeinderäume."],
-    ["Digital ohne Umwege", "Webseiten, Tools und Automatisierung werden so gebaut, dass sie im Betrieb klar nutzbar bleiben."],
-    ["Neue Räume eröffnen", "Lernräume, Glaubensräume und Medienformate machen Inhalte zugänglich und interaktiv."]
+    ["Räume verlässlich ausstatten", "Sitzmöbel, Tische und Organisation werden so gedacht, dass sie im Gemeindebetrieb einfach funktionieren."],
+    ["Digital sinnvoll ergänzen", "Webseiten, Tools und Automatisierung kommen dort dazu, wo sie Abläufe spürbar leichter machen."]
   ];
 
   return (
@@ -274,12 +272,12 @@ function DigitalSection() {
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
               <h2 className="text-3xl font-semibold text-white sm:text-5xl">
-                Der digitale Bereich für Webseiten, Werkzeuge und Automatisierung.
+                Ergänzend digital: Webseiten, Werkzeuge und Automatisierung.
               </h2>
               <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-                DLMNS Digital ergänzt den Gemeindeservice um digitale Produktentwicklung:
-                von klaren Webseiten bis zu kleinen Tools, Prozesssystemen und
-                automatisierten Abläufen.
+                DLMNS Digital ist kein Ersatz für den praktischen Gemeindeservice,
+                sondern erweitert ihn: von klaren Webseiten bis zu kleinen Tools,
+                Prozesssystemen und automatisierten Abläufen.
               </p>
             </div>
             <a
@@ -305,7 +303,7 @@ function ContactSection() {
           Einstieg
         </p>
         <h2 className="mt-5 text-3xl font-semibold text-white sm:text-5xl">
-          Du suchst Ausstattung, Beratung oder ein digitales System für Gemeinde
+          Du suchst Ausstattung, Beratung oder digitale Unterstützung für Gemeinde
           und Raum?
         </h2>
         <a
@@ -335,7 +333,8 @@ function Footer() {
             sizes="(min-width: 640px) 256px, 224px"
           />
           <p className="mt-4 max-w-md leading-7">
-            Familienbetrieb für Gemeinde, Raum, Ausstattung und digitale Entwicklung.
+            Familienbetrieb für Gemeinde, Raum, Ausstattung und ergänzende digitale
+            Werkzeuge.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:justify-self-end">
@@ -359,25 +358,7 @@ function Footer() {
 function SystemBackdrop() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
-      <div className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(rgba(148,163,184,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.18)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <svg
-        className="absolute right-[-8rem] top-24 hidden h-[34rem] w-[34rem] text-emerald-100/16 md:block lg:right-[5vw]"
-        viewBox="0 0 520 520"
-        fill="none"
-      >
-        <path d="M97 248H224L313 142H429" stroke="currentColor" strokeWidth="1" />
-        <path d="M129 334H260L342 258H474" stroke="currentColor" strokeWidth="1" />
-        <path d="M209 422L292 340L421 340" stroke="currentColor" strokeWidth="1" />
-        {[97, 224, 313, 429, 129, 260, 342, 474, 209, 292, 421].map((x, index) => (
-          <circle
-            key={`${x}-${index}`}
-            cx={x}
-            cy={[248, 248, 142, 142, 334, 334, 258, 258, 422, 340, 340][index]}
-            r="4"
-            fill="currentColor"
-          />
-        ))}
-      </svg>
+      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(148,163,184,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.16)_1px,transparent_1px)] [background-size:80px_80px]" />
     </div>
   );
 }

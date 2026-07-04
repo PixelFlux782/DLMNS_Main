@@ -18,8 +18,8 @@ export type DlmnsOffer = {
 export const offers: DlmnsOffer[] = [
   {
     name: "Räume & Ausstattung",
-    summary: "Sitzmöbel, Stapelstühle, Klapptische und Ausstattung für Gemeinderäume.",
-    items: ["Sitzmöbel", "Stapelstühle", "Klapptische", "Gemeinderäume"]
+    summary: "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für Gemeinderäume.",
+    items: ["Sitzmöbel", "Stapelstühle", "Klapptische", "Raumnutzung"]
   },
   {
     name: "Gemeindeservice",
@@ -28,8 +28,8 @@ export const offers: DlmnsOffer[] = [
   },
   {
     name: "DLMNS Digital",
-    summary: "Digitale Werkzeuge, Webseiten, Tools und Automatisierung aus einer Hand.",
-    items: ["Digitale Werkzeuge", "Webseiten", "Tools", "Automatisierung"],
+    summary: "Webseiten, kleine Tools und Automatisierung als Ergänzung zum praktischen Gemeindeservice.",
+    items: ["Webseiten", "Werkzeuge", "Abläufe", "Ergänzung"],
     href: "https://dlmn-sdigital.vercel.app/",
     cta: "Digital ansehen"
   },
@@ -42,29 +42,36 @@ export const offers: DlmnsOffer[] = [
   },
   {
     name: "Neue Angebote",
-    summary: "Raumgestaltung, Beratung, Medien und Prozesssysteme für neue Vorhaben.",
-    items: ["Raumgestaltung", "Beratung", "Medien", "Prozesssysteme"]
+    summary: "Raumgestaltung, Beratung, Medien und einfache Prozesssysteme für neue Vorhaben.",
+    items: ["Raumgestaltung", "Beratung", "Medien", "Prozesse"]
   }
 ];
 
 export const worlds: DlmnsWorld[] = [
   {
-    name: "DLMNS Digital",
-    category: "Digitale Entwicklung",
-    description:
-      "Webseiten, Werkzeuge, Automatisierung und Produktlogik für Gemeinden, Projekte und kleine Organisationen.",
-    status: "Aktiv",
-    href: "https://dlmn-sdigital.vercel.app/",
-    cta: "Öffnen"
-  },
-  {
     name: "Gemeindeservice",
     category: "Service & Organisation",
     description:
-      "Praktische Unterstützung für Abläufe, Ausstattung, Kommunikation und Bedarf in Gemeinderäumen.",
+      "Praktische Unterstützung für Abläufe, Ausstattung, Kommunikation und konkreten Bedarf in Gemeinderäumen.",
     status: "Aktiv",
     href: "https://gemeindeservice2.vercel.app/",
     cta: "Ansehen"
+  },
+  {
+    name: "Räume & Ausstattung",
+    category: "Gemeinde & Raum",
+    description:
+      "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für nutzbare Gemeinderäume.",
+    status: "Im Aufbau"
+  },
+  {
+    name: "DLMNS Digital",
+    category: "Digitale Ergänzung",
+    description:
+      "Webseiten, Werkzeuge und Automatisierung für Gemeinden, Projekte und kleine Organisationen, wenn Digitales wirklich entlastet.",
+    status: "Aktiv",
+    href: "https://dlmn-sdigital.vercel.app/",
+    cta: "Öffnen"
   },
   {
     name: "Bibel Symbolraum",
@@ -74,13 +81,6 @@ export const worlds: DlmnsWorld[] = [
     status: "Aktiv",
     href: "https://bibel-symbolraum.vercel.app/",
     cta: "Erkunden"
-  },
-  {
-    name: "Räume & Ausstattung",
-    category: "Gemeinde & Raum",
-    description:
-      "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für nutzbare Gemeinderäume.",
-    status: "Im Aufbau"
   },
   {
     name: "Neue Angebote",
