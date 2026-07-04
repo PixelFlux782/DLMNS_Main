@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DLMNS | Digitale Systeme, Denkformate und Erfahrungsräume",
+  title: "DLMNS | Gemeinde, Raum und digitale Entwicklung",
   description:
-    "DLMNS bündelt digitale Systeme, Produktideen, Analysewerkzeuge und Bedeutungsräume als ruhige Root Page.",
+    "DLMNS ist ein Familienbetrieb für Gemeindebedarf, Räume, Ausstattung, digitale Werkzeuge und neue Angebotsentwicklung.",
   metadataBase: new URL("https://dlmns.vercel.app")
 };
 

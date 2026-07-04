@@ -2,60 +2,91 @@ export type DlmnsWorld = {
   name: string;
   category: string;
   description: string;
-  status: "Live" | "Im Aufbau" | "Entsteht";
+  status: "Aktiv" | "Im Aufbau" | "Entsteht";
   href?: string;
   cta?: string;
 };
 
+export type DlmnsOffer = {
+  name: string;
+  summary: string;
+  items: string[];
+  href?: string;
+  cta?: string;
+};
+
+export const offers: DlmnsOffer[] = [
+  {
+    name: "Räume & Ausstattung",
+    summary: "Sitzmöbel, Stapelstühle, Klapptische und Ausstattung für Gemeinderäume.",
+    items: ["Sitzmöbel", "Stapelstühle", "Klapptische", "Gemeinderäume"]
+  },
+  {
+    name: "Gemeindeservice",
+    summary: "Beratung, Services und klare Abläufe für Organisation und Gemeindebedarf.",
+    items: ["Services", "Beratung", "Abläufe", "Organisation", "Gemeindebedarf"]
+  },
+  {
+    name: "DLMNS Digital",
+    summary: "Digitale Werkzeuge, Webseiten, Tools und Automatisierung aus einer Hand.",
+    items: ["Digitale Werkzeuge", "Webseiten", "Tools", "Automatisierung"],
+    href: "https://dlmn-sdigital.vercel.app/",
+    cta: "Digital ansehen"
+  },
+  {
+    name: "Digitale Räume",
+    summary: "Symbolräume, Lernräume, Glaubensräume und interaktive Formate.",
+    items: ["Symbolraum", "Lernräume", "Glaubensräume", "Interaktive Formate"],
+    href: "https://bibel-symbolraum.vercel.app/",
+    cta: "Raum erkunden"
+  },
+  {
+    name: "Neue Angebote",
+    summary: "Raumgestaltung, Beratung, Medien und Prozesssysteme für neue Vorhaben.",
+    items: ["Raumgestaltung", "Beratung", "Medien", "Prozesssysteme"]
+  }
+];
+
 export const worlds: DlmnsWorld[] = [
   {
     name: "DLMNS Digital",
-    category: "Produktstudio",
+    category: "Digitale Entwicklung",
     description:
-      "Digitale Produktsysteme für Analyse, Prozesse, Automatisierung und Wachstum.",
-    status: "Live",
+      "Webseiten, Werkzeuge, Automatisierung und Produktlogik für Gemeinden, Projekte und kleine Organisationen.",
+    status: "Aktiv",
     href: "https://dlmn-sdigital.vercel.app/",
     cta: "Öffnen"
   },
   {
-    name: "Shophebel",
-    category: "Analysesystem",
+    name: "Gemeindeservice",
+    category: "Service & Organisation",
     description:
-      "Analyse- und Optimierungssystem für Onlineshops. Erkennt Umsatzbremsen, bewertet Signale und priorisiert nächste Schritte.",
-    status: "Live",
-    href: "https://shophebel-analyse.vercel.app/",
+      "Praktische Unterstützung für Abläufe, Ausstattung, Kommunikation und Bedarf in Gemeinderäumen.",
+    status: "Aktiv",
+    href: "https://gemeindeservice2.vercel.app/",
     cta: "Ansehen"
   },
   {
     name: "Bibel Symbolraum",
-    category: "Bedeutungsraum",
+    category: "Digitaler Glaubensraum",
     description:
       "Interaktiver Bedeutungsraum für biblische Symbole, Wörter, Räume und persönliche Wege.",
-    status: "Live",
+    status: "Aktiv",
     href: "https://bibel-symbolraum.vercel.app/",
     cta: "Erkunden"
   },
   {
-    name: "Gemeindeservice",
-    category: "Digitaler Bereich",
+    name: "Räume & Ausstattung",
+    category: "Gemeinde & Raum",
     description:
-      "Digitale Werkzeuge und Services für Gemeinden, Organisation und Kommunikation.",
-    status: "Live",
-    href: "https://gemeindeservice2.vercel.app/",
-    cta: "Öffnen"
-  },
-  {
-    name: "Stapelstuhl & Klapptisch",
-    category: "Medien- und Gesprächsformat",
-    description:
-      "Gesprächsformat für Glaube, Alltag, Körper, Denken und echte Lebensfragen.",
+      "Sitzmöbel, Stapelstühle, Klapptische und durchdachte Ausstattung für nutzbare Gemeinderäume.",
     status: "Im Aufbau"
   },
   {
-    name: "Custom Systems / Experimente",
-    category: "Prototypenraum",
+    name: "Neue Angebote",
+    category: "Entwicklung",
     description:
-      "Raum für neue DLMNS-Systeme, Prototypen und digitale Produktideen.",
+      "Raumgestaltung, Beratung, Medienformate und Prozesssysteme als wachsende Angebotslinie.",
     status: "Entsteht"
   }
 ];
