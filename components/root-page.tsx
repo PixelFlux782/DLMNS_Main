@@ -14,7 +14,6 @@ const fadeIn = {
 export function RootPage() {
   return (
     <main className="relative isolate min-h-screen overflow-hidden">
-      <SystemBackdrop />
       <Header />
       <Hero />
       <OfferSection />
@@ -69,18 +68,9 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative mx-auto flex min-h-[86svh] max-w-7xl flex-col justify-center px-5 pb-12 pt-28 sm:px-8 lg:min-h-[82svh]"
+      className="relative mx-auto grid min-h-[86svh] max-w-7xl overflow-hidden px-5 pb-12 pt-28 sm:px-8 lg:min-h-[82svh] lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:items-center lg:gap-12"
     >
-      <Image
-        src="/dlmns-main-icon.png"
-        alt=""
-        width={1400}
-        height={1400}
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-12rem] top-28 hidden w-[34rem] max-w-none opacity-[0.13] mix-blend-screen lg:block"
-        sizes="544px"
-      />
-      <div className="w-full max-w-[calc(100vw-2.5rem)] sm:max-w-4xl">
+      <div className="relative z-10 w-full max-w-[calc(100vw-2.5rem)] sm:max-w-4xl">
         <p className="mb-7 max-w-[22rem] text-xs font-medium uppercase tracking-[0.16em] text-emerald-100/75 sm:max-w-none sm:tracking-[0.28em]">
           Familienbetrieb für Gemeinde, Raum und Ausstattung
         </p>
@@ -107,7 +97,9 @@ function Hero() {
         </div>
       </div>
 
-      <div className="mt-16 grid w-full max-w-[calc(100vw-2.5rem)] grid-cols-2 gap-px border border-white/10 bg-white/10 sm:max-w-4xl sm:grid-cols-4">
+      <HeroFishMark />
+
+      <div className="relative z-10 mt-16 grid w-full max-w-[calc(100vw-2.5rem)] grid-cols-2 gap-px border border-white/10 bg-white/10 sm:max-w-4xl sm:grid-cols-4 lg:col-span-2">
         {["Gemeinde", "Räume & Ausstattung", "Service", "Digital als Ergänzung"].map((item) => (
           <div key={item} className="bg-ink/72 px-4 py-4 text-sm text-slate-300">
             {item}
@@ -115,6 +107,35 @@ function Hero() {
         ))}
       </div>
     </section>
+  );
+}
+
+function HeroFishMark() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute right-[-12.5rem] top-32 z-[1] aspect-square w-[19rem] opacity-55 sm:right-[-8rem] sm:w-[25rem] sm:opacity-70 lg:relative lg:right-auto lg:top-auto lg:order-none lg:w-full lg:max-w-[33rem] lg:justify-self-end lg:opacity-100"
+    >
+      <div className="absolute inset-[7%] rounded-full border border-emerald-100/14 bg-[radial-gradient(circle_at_46%_42%,rgba(208,226,191,0.17),transparent_48%),linear-gradient(145deg,rgba(255,255,255,0.075),rgba(255,255,255,0.015))]" />
+      <div className="absolute inset-[17%] rounded-full border border-white/10" />
+      <div className="absolute inset-[24%] rounded-full border border-emerald-100/10" />
+      <Image
+        src="/dlmns-main-icon.png"
+        alt=""
+        width={1400}
+        height={1400}
+        priority
+        className="relative h-full w-full object-contain opacity-[0.24] mix-blend-screen sm:opacity-[0.34] lg:opacity-[0.66]"
+        sizes="(min-width: 1024px) 528px, (min-width: 640px) 352px, 272px"
+      />
+      <div className="absolute inset-x-[15%] bottom-[8%] hidden justify-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-emerald-50/52 sm:flex">
+        {["Gemeinde", "Raum", "Entwicklung"].map((label) => (
+          <span key={label} className="border border-white/10 bg-ink/45 px-2 py-1">
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -352,13 +373,5 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function SystemBackdrop() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
-      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(148,163,184,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.16)_1px,transparent_1px)] [background-size:80px_80px]" />
-    </div>
   );
 }
